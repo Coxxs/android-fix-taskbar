@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    signingConfigs {
+        sign
+    }
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "xp.taskbarmod"
+        minSdkVersion 32
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sign
+        }
+    }
+    flavorDimensions 'variant'
+    productFlavors {
+        hide {
+            dimension 'variant'
+            buildConfigField "Boolean", "TASKBAR_HIDE", "true"
+            manifestPlaceholders.xposedmodule = "Hide tablet taskbar"
+            manifestPlaceholders.xposeddescription = "Hold taskbar to hide taskbar pill on Android 12.1+"
+        }
+        fixpe {
+            dimension 'variant'
+            buildConfigField "Boolean", "TASKBAR_HIDE", "false"
+            manifestPlaceholders.xposedmodule = "Fix PE taskbar"
+            manifestPlaceholders.xposeddescription = "Fix PixelExperience taskbar on Android 12.1"
+        }
+    }
+}
+
+repositories {
+    jcenter();
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly 'de.robv.android.xposed:api:82'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

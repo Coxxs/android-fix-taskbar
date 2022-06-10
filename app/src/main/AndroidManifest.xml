@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xp.taskbarmod">
+
+    <application android:label="Remove Taskbar">
+        <meta-data android:name="xposedmodule" android:value="${xposedmodule}" />
+        <meta-data android:name="xposeddescription" android:value="${xposeddescription}" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <meta-data android:name="xposedscope" android:resource="@array/xp_scope" />
+    </application>
+</manifest>
