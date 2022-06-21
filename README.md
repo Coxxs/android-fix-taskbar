@@ -1,4 +1,4 @@
-> **This project is deprecated. Please use [Hide tablet taskbar](https://github.com/Coxxs/hide-tablet-taskbar) (Magisk module).**
+> **This project is deprecated. Please use [Hide tablet taskbar](https://github.com/Coxxs/hide-tablet-taskbar) (Magisk module) instead.**
 
 # Fix Taskbar
 
