@@ -1,3 +1,5 @@
+> **This project is deprecated. Please use [Hide tablet taskbar](https://github.com/Coxxs/hide-tablet-taskbar) (Magisk module).**
+
 # Fix Taskbar
 
 An [LSPosed](https://github.com/LSPosed/LSPosed) module to:
